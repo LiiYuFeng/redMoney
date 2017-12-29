@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>首页</title>
+	<link rel="stylesheet"  href="css/reset.css">
+	<link rel="stylesheet"  href="css/red.css">
+</head>
+<body>
+<div id="allModuel">
+	<ul>
+		<li>
+			<p><img src="image/food.png"></p>
+			<p>美食</p>
+		</li>
+		<li>
+			<p><img src="image/food.png"></p>
+			<p>美食</p>
+		</li>
+		<li>
+			<p><img src="image/food.png"></p>
+			<p>美食</p>
+		</li>
+		<li>
+			<p><img src="image/food.png"></p>
+			<p>美食</p>
+		</li>
+		<li>
+			<p><img src="image/food.png"></p>
+			<p>美食</p>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script async>
+		/*rem自适应*/
+		(function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 640) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+		$(function(){
+			$('.closePage').click(function(){
+					event.stopPropagation();
+				    $('.bodymeng').hide();
+					$('.showCon').hide();
+				});
+		})
+</script>
+</body>
+</html>

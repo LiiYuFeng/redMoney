@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<title>红包未打开</title>
+	<link rel="stylesheet"  href="css/reset.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet"  href="css/red.css">
+</head>
+<body>
+	<div class="moneyWatch" style="font-size:0.35rem;tetx-align:center">
+		<div>我的每日消费红包钱数：<span class="myWatch" ></span></div>
+		<div>我的邀请奖励红包钱数：<span class="myWatch" ></span></div>
+	</div>
+	<div class="linkIndex" style="font-size:0.35rem;tetx-align:center"><a href="redSelect.html">返回首页</a></div>
+	<!-- 页面蒙层 -->
+	<div class="mengceng">
+			<div class="bodymeng"></div>
+			<!-- 积分抽红包 -->
+			<div class="showCon">
+				<div class="img">
+					<div class="closePage"><img src="image/closeIcon.png" ></div>
+					<div class="imgRed linkOpen"><img src="image/redNoopen.png"></div>
+					<div class="fontOpen linkOpen"><img src="image/fontOpen.png" class="wow bounceIn infinite"></div>
+					<div class="getMoney">
+						<a href="##">点击邀好友获抽奖机会&ensp;&gt;</a>
+					</div>
+				</div>
+			</div>
+			<!-- 邀请抽红包 -->
+			<div class="showCon redMoney" style="display:none">
+				<div class="img">
+					<div class="openPage"><img src="image/redOpen.png"></div>
+					<div class="closePage"><img src="image/closeIcon.png" ></div>
+					<div class="numMoney">
+						<span class="fontMoney" ></span>
+					</div>
+					<div class="getMoney">
+						<a href="##"><span>立即提现&ensp;&gt;</span></a>
+					</div>
+				</div>
+			</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/rem.js"></script>
+	<script async>
+		$(function(){
+			$.ajax({
+					 type: "GET",
+		             url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card=320621198008206990",
+		             dataType: "json",
+		             success:function(data){
+		             	console.log(JSON.stringify(data));
+		             },error:function(error){
+		             	console.log(JSON.stringify(error))
+		             }
+			})
+			/*动画*/
+			var wow = new WOW({
+			    boxClass: 'wow',
+			    animateClass: 'animated',
+			    offset: 0,
+			    mobile: true,
+			    live: true
+			});
+			wow.init();
+			/*关闭红包页面*/
+			$('.closePage').click(function(){
+					event.stopPropagation();
+				    $('.bodymeng').hide();
+					$('.showCon').hide();
+				});
+			/*请求红包数据*/
+			$('.linkOpen').on('touchstart',function(e) {
+				$.ajax({
+					 type: "GET",
+		             url: "redSelect.json",
+		             dataType: "json",
+		             success:function(data){
+		             	console.log(JSON.stringify(data.data1));
+		             	$('.fontMoney').text(data.data1[0].amount);
+		             }
+				})
+			    $('.redMoney').show();
+			});
+
+		})
+	</script>
+</body>
+</html>
