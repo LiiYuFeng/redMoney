@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-	<title>红包选择</title>
+	<meta content="yes" name="apple-mobile-web-app-capable"/><!-- 兼容iphone -->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<title>红包领取</title>
 	<link rel="stylesheet"  href="css/reset.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet"  href="css/red.css">
@@ -36,109 +39,37 @@
 	<script type="text/javascript" src="js/wow.min.js"></script>
 	<script type="text/javascript" src="js/rem.js"></script>
 	<script>
-		$(function(){
-	/*		$.ajax({
-			type:"GET",  
-	        url: "red.json",
-	        dataType:'json',    
-	        success:function(data) {  
-	        	alert(111);
-	            console.log(JSON.stringify(data.data2));
-	            var quality=data.data2.quantity;
-	            $('.numEvery').text(quality);
-				if (quality>0) {
-					$('.btnEvery').css('background','#fe492a')
-					$('.btnEvery').on('touchstart',function(e) {
-				    	window.location.href="red.html"
-				    });
-				};
-	        },error:function(){alert('错误')}
-	    }); */
-	    /*判断红包数是否为0*/
-	    /*$.ajax({
-	    	type: "GET",
-		    url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card=320621198008206990",
-		    dataType: "jsonp",
-		    success:function(data){
-		    	console.log(111)
-		    }
-	    })*/
+	/*本地存储用户的身份证*/
+	sessionStorage.setItem('id_card', 320621198008206990);
+	var id_card = sessionStorage.getItem('id_card');
+    console.log(id_card);
+	$(function(){
 		$.ajax({
 				type: "GET",
 		        url: "red.json",
 		        dataType: "json",
 		        success:function(data){
-		            console.log(JSON.stringify(data.data));
-		            var quality=data.data[0].quantity;
-		            var invitation=data.data[0].invitation;
+		            console.log("成功"+JSON.stringify(data.data));
+		            var quality=data.data[0].quantity;//消费抽取数量
+		            var invitation=data.data[0].invitation;//邀请抽取数量
 		            $('.numEvery').text(quality);
 		            $('.numPlese').text(invitation);
 		            /*消费红包*/
 		            if (quality>0) {
 						$('.btnEvery').css('background','#fe492a');
 						$('.btnEvery').on('touchstart',function(e) {
-					    	window.location.href="red.html?type=a"
+					    	window.location.href="red.html"
 					    });
 					}
 					/*邀请抽奖*/
 					if (invitation>0) {
 						$('.btnPlese').css('background','#fe492a');
 					    $('.btnPlese').on('touchstart',function(e) {
-					    	window.location.href="red.html?type=b"
+					    	window.location.href="red.html"
 					    });
 					};
 		        }
 		})
-		/*动画*/
-		var wow = new WOW({
-			    boxClass: 'wow',
-			    animateClass: 'animated',
-			    offset: 0,
-			    mobile: true,
-			    live: true
-		});
-		wow.init();
-		/*底部字体颜色*/
-		var colorFont=['red','yellow','white'];
-		var i=0;
-		function color(){
-				i+=1;
-				if (i>=3) {i=0};
-				$('.redLink a').css('color',colorFont[i])
-			};
-			setInterval(color,1000);
-		/*请求数据*/
-	/*	function findWeather () {
-	       user_id = 320621198008206990;
-	       src = "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card=" + user_id + "&callback=getData";
-	       addScriptTag(src);
-		}
-		function getData (data) {
-		    console.log(333);
-		}
-		function addScriptTag(src){
-		    var script = document.createElement('script');
-		    script.setAttribute("type","text/javascript");
-		    script.src = src;
-		    document.body.appendChild(script);
-		}
-		findWeather (); 
-		$.ajax({
-          type : 'GET',
-          dataType : 'jsonp',
-          data : {
-            user_id : user_id,
-          },
-          url : "http://jinlichen.org/shopdataphp/ajax_client.php",
-          success : function (data){
-            console.log(1111);
-          },
-          error:function(error){
-          	console.log(222);
-          }
-   		 });*/
-   		 
-
 	})
 	</script>
 </body>
