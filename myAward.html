@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<title>我的奖品</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<style type="text/css">
+	body{
+		background: url('image/index_bg.jpg') no-repeat;
+		background-size: 100%;
+		margin:0 0.2rem;
+		font-size: 0.32rem;
+	}
+	#title{
+		display: -webkit-flex; /* Safari */
+  		display: flex;
+		justify-content: center;
+		margin-top: 1.7rem;
+	}
+	#title .items{
+		flex-basis: 68%;
+	}
+	#title .items img,#footButton .footitems img{
+		width: 100%;
+	}
+	#mainAward{
+		background: url('image/detailBg.png') no-repeat;
+		background-size: 100% 100%;
+		width: 100%;
+		height: 7rem;
+		margin-top: 0.4rem;
+	}
+	#mainAward .nothing img{
+		width: 55%;
+		text-align: center;
+		margin-top: 1.1rem;
+		margin-left: 12%;
+	}
+	#mainAward .tipFont{
+		text-align: center;
+		font-size: 0.25rem;
+		color: white;
+		margin-top: 0.3rem;
+		line-height: 0.38rem;
+	}
+	#footButton{
+		display: -webkit-flex; /* Safari */
+  		display: flex;
+		justify-content: center; 
+	}
+	#footButton .footitems{
+		flex-basis: 45%;
+		margin-top: 0.5rem;
+	}
+	/* 奖品列表 */
+	.awardList{
+		display: -webkit-flex; /* Safari */
+  		display: flex;
+  		align-items: center;
+		background: url('image/award_bg.png') no-repeat;
+		background-size: 100% 100%;
+		margin:0 3.8%;
+		height: 2.6rem;
+		color: white;
+	}
+	.awardList .items{
+		padding: 0 3.8%;
+	}
+	.awardList .items:nth-child(1){flex-basis:45%;}
+	.awardList .items:nth-child(2){flex-basis:55%;}
+	.awardList .listLeft img{width: 100%;}
+	.awardList .listRight h4{font-size: 0.37rem;font-weight: bold}
+	.awardList .listRight{text-align: right;}
+	.awardList .listRight .status button{
+		font-family: '宋体';
+		font-size: 0.28rem;
+		width: 80%;
+		border: none;
+		outline: none;
+		color: white;
+		background:url('image/font_bg.png') no-repeat;
+		background-size: 100% 100%;
+		padding: 0.14rem 0;
+		margin-top: 0.25rem;
+	}
+	.awardList .listRight p{
+		color: white;
+		font-family: '宋体';
+		font-size: 0.25rem;
+	}
+
+
+</style>
+<body>
+	<div id="title">
+		<div class="items"><img src="image/title.png" ></div>
+	</div>
+	<!-- 没有奖品时 -->
+	<!-- <div id="mainAward">
+		<div class="nothing"><img src="image/nothing.png"></div>
+		<div class="tipFont">
+			<p>您还没抢到奖品额</p>
+			<p>赶紧行动吧</p>
+		</div>
+	</div> -->
+	<!-- 有奖品时 -->
+	<div id="mainAward">
+		<div class="awardList">
+			<div class="items listLeft"><img src="image/redWatch.png"></div>
+			<div class="items listRight">
+				<h4>20元红包</h4>
+				<div class="status">
+					<button>已领取</button>
+				</div>
+			</div>
+		</div>
+		<div class="awardList">
+			<div class="items listLeft"><img src="image/awardTwo.png"></div>
+			<div class="items listRight">
+				<h4>20元红包</h4>
+				<p>请前往舞台左侧领奖区兑奖</p>
+				<div class="status">
+					<button class="toGet">立即领取</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footButton">
+		<div class="footitems">
+			<img src="image/anniu.png" class="wow pulse infinite">
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/rem.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script>
+	/*动画*/
+		var wow = new WOW({
+			    boxClass: 'wow',
+			    animateClass: 'animated',
+			    offset: 0,
+			    mobile: true,
+			    live: true
+			});
+		wow.init();
+	/*奖品*/
+	$('.toGet').on('touchstart',function(){
+		window.location.href="deaAward.html";
+	})
+	/*$("#mainAward").animate({
+	      height:'7rem',
+	    },3000);*/
+	</script>
+</body>
+</html>

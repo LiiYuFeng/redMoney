@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<title>抽奖页</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<style type="text/css">
+	body{
+		background: url(image/award_bg.jpg) no-repeat;
+		background-size: 100%;
+		font-size: 0.32rem;
+	}
+	.awardOpen,.openButton{
+		display: -webkit-flex; /* Safari */
+ 		display: flex;
+ 		-webkit-justify-content: center;
+ 		justify-content:center;
+	}
+	.awardOpen .itemOpen{
+		flex-basis:86%;
+		margin-top: 2.1rem;	
+		position: relative;
+	}
+	.awardOpen .itemOpen img{
+		width: 100%;
+	}
+	.awardOpen .awardFont{
+		color: #f8ea01;
+		font-weight: bold;
+		position: absolute;
+		top: 0.8rem;
+		left: 
+	}
+	.openButton{
+		margin-top: 0.8rem;
+		color: white;
+	}
+</style>
+<body class="wow lightSpeedIn">
+	<div class="awardOpen">
+		<div class="itemOpen">
+			<img src="image/moneyAward.png">
+			<p class="awardFont">恭喜你获得一个红包</p>
+		</div>
+	</div>
+	<div class="openButton">
+		<div class="itemBut">打开红包</div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/rem.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script>
+	/*动画*/
+		var wow = new WOW({
+			    boxClass: 'wow',
+			    animateClass: 'animated',
+			    offset: 0,
+			    mobile: true,
+			    live: true
+			});
+		wow.init();
+	/*奖品*/
+	$(function(){
+		function animateAbtn(){
+			$('.awardFont').fadeOut(1000);
+			$('.awardFont').fadeIn(1000);
+		};
+		setInterval(animateAbtn,2000)
+		
+	})
+	</script>
+</body>
+</html>

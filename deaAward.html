@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<title>前往领取</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<style type="text/css">
+	body{
+		background: url(image/award_bg.jpg) no-repeat;
+		background-size: 100%;
+		font-size: 0.32rem;
+		margin:0 10.6%;
+	}
+	#mainDea{
+		display: -webkit-flex; /* Safari */
+  		display: flex;
+  		justify-content: center;
+  		/* background: url(image/deatailBg.jpg) no-repeat;
+  		  				background-size: 100% 100%;
+  		  		 */  		margin-top: 1.1rem;
+	}
+	#mainDea .parItems{
+		position: relative;
+		/* display: -webkit-flex;
+		  		display: flex;
+		  		align-items:center;
+		  		flex-direction: column; */
+		text-align: center;
+	}
+	#mainDea .parItems img{
+		width: 100%;
+	}
+	#mainDea .parItems .name{
+		position: absolute;
+		top: 0.35rem;
+		background: url(image/award_title.png) no-repeat; 
+		background-size: 100% 100%;
+		width: 92%;
+		margin:0 4%;
+		padding: 0.1rem 0;
+	}
+	#mainDea .parItems .deaImg{
+		position: absolute;
+		top: 2.5rem;
+		width: 100%;
+	}
+	#mainDea .parItems .tip{
+		position: absolute;
+		top: 6.5rem;
+		color: #f9f1f1;
+		font-size: 0.26rem;
+		width: 100%;
+	}
+	#mainDea .parItems .deaImg img{width:  61%;}
+	#mainDea .parItems .name h2{
+		font-size: 0.4rem;
+		color: #f8ea01;
+		font-family: '[FZLTZHK]';
+		font-weight: bold;
+	}
+	#footButton{
+		text-align: center;
+	}
+	#footButton img{width: 45%;}
+</style>
+<body>
+	<div id="mainDea">
+		<div class="parItems">
+			<div><img src="image/bg2.png"></div>
+			<div class="name"><h2>健康睡眠U型枕</h2></div>
+			<div class="deaImg"><img src="image/pillow.png"></div>
+			<div class="tip"><p>请前往舞台左侧领奖区兑奖</p></div>
+		</div>
+	</div>
+	<div id="footButton" class="itemDiv">
+		<img src="image/anniu.png" class="wow pulse infinite">
+	</div>
+
+
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/rem.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script>
+	/*动画*/
+		var wow = new WOW({
+			    boxClass: 'wow',
+			    animateClass: 'animated',
+			    offset: 0,
+			    mobile: true,
+			    live: true
+			});
+		wow.init();
+	/*奖品*/
+	
+	</script>
+</body>
+</html>
