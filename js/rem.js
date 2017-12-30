@@ -15,3 +15,21 @@
             win.addEventListener(resizeEvt, recalc, false);
             doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
+/*wow动画*/
+var wow = new WOW({
+    boxClass: 'wow',
+    animateClass: 'animated',
+    offset: 0,
+    mobile: true,
+    live: true
+});
+wow.init();
+/*底部字体颜色*/
+var colorFont=['red','yellow','white'];
+var i=0;
+function color(){
+        i+=1;
+        if (i>=3) {i=0};
+        $('.redLink a').css('color',colorFont[i])
+        };
+setInterval(color,1000);
