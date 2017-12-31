@@ -17,15 +17,15 @@
 			<div class="items"><img src="image/title.png" ></div>
 		</div>
 		<!-- 没有奖品时 -->
-		<div id="mainAward" class="noPadding">
+		<!-- <div id="mainAward" class="noPadding">
 			<div class="nothing"><img src="image/nothing.png"></div>
 			<div class="tipFont">
 				<p>您还没抢到奖品额</p>
 				<p>赶紧行动吧</p>
 			</div>
-		</div>
+		</div> -->
 		<!-- 有奖品时 -->
-		<!-- <div id="mainAward">
+		<div id="mainAward" class="haveThing">
 			<div class="awardList">
 				<div class="items listLeft"><img src="image/redWatch.png" class="imgFade"></div>
 				<div class="items listRight">
@@ -45,7 +45,7 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<div id="footButton">
 			<img src="image/backAbtn.png" class="wow pulse infinite">
 		</div>
@@ -58,8 +58,11 @@
 	$('.toGet').on('touchstart',function(){
 		window.location.href="deaAward.html";
 	})
-	$("#mainAward").animate({
+	$(".noPadding").animate({
 	      height:'5rem',
+	    },2500);
+	$(".haveThing").animate({
+	      height:'7rem',
 	    },2500);
 	$('#footButton img').click(function(){
 				/*$('.toggle').hide(500);
