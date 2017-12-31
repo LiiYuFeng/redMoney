@@ -38,10 +38,16 @@
 			$('.myAward img').fadeIn(1000);
 		};
 		setInterval(animateAbtn,2000);
-		$('.myAward').on('touchstart',function(){
-		window.location.href="myAward.html";
+		/*$('.myAward').on('touchstart',function(){
+		
 		})
 		$('#footButton').on('touchstart',function(){
+			window.location.href="getAward.html";
+		})*/
+		$('.myAward').click(function(){
+			window.location.href="myAward.html";
+		})
+		$('#footButton').click(function(){
 			window.location.href="getAward.html";
 		})
 		
