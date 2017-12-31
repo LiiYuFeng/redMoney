@@ -11,89 +11,20 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 </head>
-<style type="text/css">
-	body{
-		background: url(image/award_bg.jpg) no-repeat;
-		background-size: 100%;
-		font-size: 0.32rem;
-		margin:0 10.6%;
-	}
-	#mainDea{
-		display: -webkit-flex; /* Safari */
-  		display: flex;
-  		justify-content: center;
-  		/* background: url(image/deatailBg.jpg) no-repeat;
-  		  				background-size: 100% 100%;
-  		  		 */  		margin-top: 1.1rem;
-	}
-	#mainDea .parItems{
-		position: relative;
-		/* display: -webkit-flex;
-		  		display: flex;
-		  		align-items:center;
-		  		flex-direction: column; */
-		text-align: center;
-	}
-	#mainDea .parItems img{
-		width: 100%;
-	}
-	#mainDea .parItems .name{
-		position: absolute;
-		top: 0.35rem;
-		background: url(image/award_title.png) no-repeat; 
-		background-size: 100% 100%;
-		width: 92%;
-		margin:0 4%;
-		padding: 0.1rem 0;
-	}
-	#mainDea .parItems .deaImg{
-		position: absolute;
-		top: 2.5rem;
-		width: 100%;
-	}
-	#mainDea .parItems .tip{
-		position: absolute;
-		top: 6.5rem;
-		color: #f9f1f1;
-		font-size: 0.26rem;
-		width: 100%;
-	}
-	#mainDea .parItems .deaImg img{width:  61%;}
-	#mainDea .parItems .name h2{
-		font-size: 0.4rem;
-		color: #f8ea01;
-		font-family: '[FZLTZHK]';
-		font-weight: bold;
-	}
-
-</style>
-<body>
-	<div id="awardOpen" class="toggle1">
-		<div class="openBg"><img src="image/bg2.png"></div>
-		<div class="name"><h2>恭喜您获得U型抱枕</h2></div>
-		<div class="imgDea imgThing"><img src="image/red4.png"></div>
+<body class="deaBody">
+	<div id="container">
+		<div id="awardTip">
+			<div class="openBg"><img src="image/bg2.png"></div>
+			<div class="name"><p>恭喜您获得U型抱枕</p></div>
+			<div class="imgDea imgThing"><img src="image/red4.png"></div>
+			<div class="tipGet"><p>请前往舞台左侧领奖区兑奖</p></div>
+		</div>
+		<div id="footButton">
+			<img src="image/toget.png" class="wow pulse infinite">
+		</div>
 	</div>
-	<div id="footButton" class="itemDiv">
-		<img src="image/abtn.png" class="wow pulse infinite">
-	</div>
-
-
-
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/rem.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script>
-	/*动画*/
-		var wow = new WOW({
-			    boxClass: 'wow',
-			    animateClass: 'animated',
-			    offset: 0,
-			    mobile: true,
-			    live: true
-			});
-		wow.init();
-	/*奖品*/
-	
-	</script>
+	<script type="text/javascript" src="js/rem.js"></script>
 </body>
 </html>
