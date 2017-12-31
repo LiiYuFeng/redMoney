@@ -15,7 +15,7 @@ html{font-size: 0.32rem;}
 	background-size: 100% 100%;
 	margin:0 5.8%;
 }
-#topLogo{margin-top: 1.6rem;}
+#topLogo{margin-top: 0.4rem;}
 #topLogo .logoImg{width: 48%;float: left;margin-top: 0.15rem;}
 #topLogo .logoImg img{width: 100%;}
 #topLogo .myAward{width: 52%;float: right;text-align: right;}
