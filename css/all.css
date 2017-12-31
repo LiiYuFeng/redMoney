@@ -74,6 +74,7 @@ html{font-size: 0.32rem;}
 	background-size: 100% 100%;
 	width: 100%;
 	overflow-y: scroll;
+	height: 2rem;
 }
 .noPadding{padding:0.8rem 0 1.3rem 0;}
 #mainAward .nothing img{
