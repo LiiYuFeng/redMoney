@@ -13,12 +13,11 @@
 </head>
 <body class="wow lightSpeedIn getBody">
 	<div id="container">
-		<div id="awardOpen" class="toggle">
-			<div class="openBg"><img src="image/bg2.png"></div>
+		<div id="awardOpen">
+			<div class="openBg"><img src="image/background.png"></div>
 			<div class="name"><p>恭喜您获得一个红包</p></div>
-			<div class="imgDea"><img src="image/red1.png"></div>
+			<div class="imgDea"><img src="image/redAnswer.png"></div>
 		</div>
-
 		<div id="footButton">
 			<img src="image/openRed.png" class="wow pulse infinite">
 		</div>
@@ -34,8 +33,6 @@
 		};
 		setInterval(animateAbtn,2000);
 		$('#footButton img').click(function(){
-			/*$('.toggle').hide(500);
-			$('.toggle1').show(500);*/
 			window.location.href="showAward.html";
 		})
 	})
