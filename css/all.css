@@ -191,8 +191,7 @@ html{font-size: 0.32rem;}
 	position: absolute;
 	top: 1.9rem;
 }
-#awardOpen .imgThing{text-align: center;}
-#awardOpen .imgThing img{width: 77%;}
+#awardOpen .imgThing img{width: 78%;margin-left: 11%;}
 #awardOpen .tipAction{
 	position: absolute;
 	bottom: 0.9rem;
