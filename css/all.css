@@ -1,106 +1,203 @@
 html{font-size: 0.32rem;}
+#container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	-webkit-flex-direction: column;
+}
 /* 首页 */
 .indexBody{
 	background:url('../image/back2.jpg') no-repeat;
-	background-size: 100%;
-	margin:0 4.5%;
+	background-size: 100% 100%;
+	margin:0 5.8%;
 }
-#topLogo{
-	display: -webkit-flex; /* Safari */
-  	display: flex;
-  	margin-top: 1.6rem;
-}
-#topLogo .items{
-	display: -webkit-flex; 
-	display: flex;
-	flex-basis: 50%;
-	align-items: center;
-} 
-#topLogo .items:nth-child(1) img{
-	width: 98%;
-}
-#topLogo .items:nth-child(2){
-	justify-content: flex-end;
-}
-#topLogo .items:nth-child(2) img{
-	width: 70%;
-}
+#topLogo{margin-top: 1.6rem;}
+#topLogo .logoImg{width: 48%;float: left;margin-top: 0.15rem;}
+#topLogo .logoImg img{width: 100%;}
+#topLogo .myAward{width: 52%;float: right;text-align: right;}
+#topLogo .myAward img{width: 70%;}
+#centerInput{width: 100%}
 #centerInput textarea{
 	box-sizing: border-box;
 	background: url('../image/input.png') no-repeat;
-	background-size: 100%;
+	background-size: 100% 100%;
 	width: 100%;
 	height: 4rem;
-	margin-top: 3.5rem;
+	margin-top: 3rem;
 	border: none;
 	outline: none;
 	font-size: 0.25rem;
 	color: #908fb2;
 	padding:0.8rem 0.5rem;
-	text-overflow: hide;
 }
 #footButton{
 	text-align: center;
 	margin-top: 0.43rem;
 }
-#footButton img{width: 45%;}
-#contain{
-	display: -webkit-flex; /* Safari */
-  	display: flex;
-  	flex-direction: column;
-  	-webkit-justify-content: center;
- 	justify-content:center;
+#footButton img{width: 42%;}
+/* 我的商品列表页 */
+.listBody{
+	background: url('../image/index_bg.jpg') no-repeat;
+	background-size: 100% 100%;
+	margin:0 2.7%;
+}
+#title{
+	text-align: center;
+	margin-top: 1.7rem;
+	width: 63%;
+}
+/* 无奖品 */
+#title img{width: 100%;}
+#mainAward{
+	background: url('../image/detailBg.png') no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 7.1rem;
+	overflow-y: scroll;
+}
+.noPadding{padding:0.8rem 0 1.3rem 0;}
+#mainAward .nothing img{
+	width: 55%;
+	margin-left: 12%;
+}
+#mainAward .tipFont{
+	text-align: center;
+	font-size: 0.25rem;
+	opacity: 0.7;
+	color: white;
+	margin-top: 0.3rem;
+	line-height: 0.38rem;
+}
+/* 有奖品 */
+#mainAward .awardList{
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	background: url('../image/award_bg.png') no-repeat;
+	background-size: 100% 100%;
+	margin:0.3rem 3.8% 0 3.8%;
+	height: 2.6rem;
+	color: white;
+}
+.awardList .items{
+	padding: 0 3.8%;
+}
+.awardList .items:nth-child(1){flex-basis:45%;}
+.awardList .items:nth-child(2){flex-basis:55%;}
+.awardList .listLeft img{width: 100%;}
+.awardList .listRight h4{font-size: 0.37rem;font-weight: bold}
+.awardList .listRight{text-align: right;}
+.awardList .listRight .status button{
+	font-family: '宋体';
+	font-size: 0.28rem;
+	width: 80%;
+	border: none;
+	outline: none;
+	color: white;
+	background:url('../image/font_bg.png') no-repeat;
+	background-size: 100% 100%;
+	padding: 0.18rem 0 0.13rem 0;
+	opacity: 0.9;
+}
+.awardList .listRight p{
+	color: white;
+	font-size: 0.25rem;
+	position: absolute;
+	right: 9.9%;
+	margin-top: 0.1rem;
+} 
+/* 领取页 */
+.deaBody{
+	background: url(../image/award_bg.jpg) no-repeat;
+	background-size: 100%;
+}
+#awardTip{
+	width: 80%;
+	margin:0 10%;
+	margin-top: 2rem;
+	position: relative;
+}
+#awardTip img{width: 100%;}
+#awardTip .name,
+#awardOpen .name
+{
+	position: absolute;
+	top: 0.7rem;
+	background: url(../image/award_title.png) no-repeat; 
+	background-size: 100% 100%;
+	width: 92%;
+	margin:0 4%;
+	height: .9rem;
+	line-height: .9rem;
+	color: #f8ea01;
+	font-weight: bold;
+	font-size: 0.41rem;
+	text-align: center;
+}
+#awardTip .imgThing{
+	position: absolute;
+	top: 2.5rem;
+	width: 100%;
+	text-align: center;
+}
+#awardTip .imgThing img{width: 78%;}
+#awardTip .tipAction{
+	position: absolute;
+	bottom: 0.7rem;
+	font-size: 0.3rem;
+	color: white;
+	width: 100%;
+	text-align: center;
+}
+#awardTip .tipGet{
+	position: absolute;
+	bottom: 0.5rem;
+	font-size: 0.3rem;
+	color: white;
+	width: 100%;
+	text-align: center;
 }
 /* 抽奖页 */
 .getBody{
 	background: url(../image/award_bg.jpg) no-repeat;
 	background-size: 100%;
+	margin:0 9.3%;
 }
 #awardOpen{
-	display: -webkit-flex; /* Safari */
- 	display: flex;
- 	-webkit-justify-content: center;
- 	justify-content:center;
  	position: relative;
  	margin-top: 1.1rem;	
 }
-#awardOpen .openBg{
-	flex-basis:86%;
-	
-}
-#awardOpen .openBg img{
+#awardOpen .openBg img,
+#awardOpen .imgDea img
+{
 	width: 100%;
-}
-#awardOpen .name{
-	position: absolute;
-	top: 0.35rem;
-	background: url(../image/award_title.png) no-repeat; 
-	background-size: 100% 100%;
-	padding: 0.2rem 0.6rem;
-	font-size: 0.4rem;
-	
-}
-#awardOpen .name h2{
-	font-weight: bold;
-	color: #f8ea01;
 }
 #awardOpen .imgDea{
 	position: absolute;
-	top: 2rem;
+	top: 1.9rem;
 }
-#awardOpen .imgDea img{
-	width: 91%;
-	margin:0 2% 0 3%;
+#awardOpen .imgThing{text-align: center;}
+#awardOpen .imgThing img{width: 77%;}
+#awardOpen .tipAction{
+	position: absolute;
+	bottom: 0.9rem;
+	color: white;
+	font-size: 0.3rem;
+	opacity: 0.8;
+	text-align: center;
+	width: 70%;
+	margin:0 15%;
 }
-#awardOpen .imgThing img{
-	width: 63%;
-	margin:18.5%;
+#awardOpen .tipGet{
+	width: 100%;
+	position: absolute;
+	bottom: 0.4rem;
+	color: #efd50d;
+	font-size: 0.3rem;
+	opacity: 0.8;
+	text-align: center;
 }
-
-	/* .awardOpen .awardFont{
-		color: #f8ea01;
-		font-weight: bold;
-		position: absolute;
-		top: 0.8rem;
-		left: 
-	} */
