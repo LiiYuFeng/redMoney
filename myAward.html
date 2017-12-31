@@ -9,6 +9,7 @@
 	<title>我的奖品</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
 </head>
 <style type="text/css">
 	body{
@@ -48,15 +49,6 @@
 		color: white;
 		margin-top: 0.3rem;
 		line-height: 0.38rem;
-	}
-	#footButton{
-		display: -webkit-flex; /* Safari */
-  		display: flex;
-		justify-content: center; 
-	}
-	#footButton .footitems{
-		flex-basis: 45%;
-		margin-top: 0.5rem;
 	}
 	/* 奖品列表 */
 	.awardList{
@@ -131,24 +123,13 @@
 			</div>
 		</div>
 	</div>
-	<div id="footButton">
-		<div class="footitems">
-			<img src="image/anniu.png" class="wow pulse infinite">
-		</div>
+	<div id="footButton" class="itemDiv">
+		<img src="image/abtn.png" class="wow pulse infinite">
 	</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/rem.js"></script>
 	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/rem.js"></script>
 	<script>
-	/*动画*/
-		var wow = new WOW({
-			    boxClass: 'wow',
-			    animateClass: 'animated',
-			    offset: 0,
-			    mobile: true,
-			    live: true
-			});
-		wow.init();
 	/*奖品*/
 	$('.toGet').on('touchstart',function(){
 		window.location.href="deaAward.html";
@@ -156,6 +137,11 @@
 	/*$("#mainAward").animate({
 	      height:'7rem',
 	    },3000);*/
+	$('.itemDiv img').click(function(){
+				/*$('.toggle').hide(500);
+				$('.toggle1').show(500);*/
+				window.location.href="index.html";
+		})
 	</script>
 </body>
 </html>
