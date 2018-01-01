@@ -13,6 +13,7 @@ html{font-size: 0.32rem;}
 #loading{
 	position: absolute;
 	top: 2rem;
+	width: 88.4%;
 }
 #loading img{
 	width: 40%;
