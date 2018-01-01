@@ -13,7 +13,7 @@ html{font-size: 0.32rem;}
 
 #loading img{
 	width: 40%;
-	margin:0.4rem 30%;
+	margin:1rem 30% 0.4rem 30%;
 }
 #loading .spanPar{
 	position: relative;
@@ -26,14 +26,14 @@ html{font-size: 0.32rem;}
 	border-radius: 10px;
 }
 #loading span.top{
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: block;
 	width:0;
 	height: .2rem;
 	background-color: #20c8ff;
 	border-radius: 10px;
-	position: absolute;
-	top: 0;
-	left: 0;
 }
 /* 首页 */
 .indexBody{
