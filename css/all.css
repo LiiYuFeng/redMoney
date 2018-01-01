@@ -9,6 +9,31 @@ html{font-size: 0.32rem;}
 	-webkit-flex-direction: column;
 	flex-direction: column;
 }
+/* 进度条 */
+#loading{text-align: center;margin-top: 2rem;}
+#loading img{
+	width: 30%;
+}
+#loading .spanPar{
+	position: relative;
+}
+#loading span.bottom{
+	display: block;
+	width:100%;
+	height: 0.2rem;
+	background-color: #060552;
+	border-radius: 10px;
+}
+#loading span.top{
+	display: block;
+	width:0;
+	height: .2rem;
+	background-color: #20c8ff;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 /* 首页 */
 .indexBody{
 	background:url('../image/index_bg.jpg') no-repeat;
@@ -103,6 +128,7 @@ html{font-size: 0.32rem;}
 }
 .awardList .items:nth-child(1){flex-basis:40%;padding:0 3%}
 .awardList .items:nth-child(2){flex-basis:60%;padding-right: 2.5%;}
+.awardList .items:nth-child(2) p{text-align: center;}
 .awardList .listLeft img{width: 100%;}
 .awardList .listRight h4{font-size: 0.37rem;font-weight: bold}
 .awardList .listRight{text-align: right;}
