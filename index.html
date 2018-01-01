@@ -12,7 +12,18 @@
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 </head>
 <body class="indexBody">
-	<div id="container">
+	<!-- 进度条 -->
+	<div id="loading">
+		<ul>
+			<li><img src="image/loading.png"></li>
+			<li class="spanPar">
+				<span class="bottom"></span>
+				<span class="top"></span>
+			</li>
+		</ul>
+	</div>
+	<!-- 内容 -->
+	<div id="container" style="display: none;">
 		<div id="topLogo">
 			<div class="logoImg"><img src="image/logo.png"></div>
 			<div class="myAward"><img src="image/myAward.png"></div>
@@ -29,6 +40,23 @@
 <script type="text/javascript" src="js/wow.min.js"></script>
 <script type="text/javascript" src="js/rem.js"></script>
 <script>	
+	/*进度条*/
+	var bottomWidth=$('span.bottom').width();
+	var myVar = setInterval(function(){spanWidth()},10);
+	function spanWidth(){
+		var topWidth=$('span.top').width();
+		topWidth+=1;
+		$('span.top').width(topWidth);
+		console.log(topWidth);
+		if (topWidth>=bottomWidth) {
+			stopColor();
+		}
+	}
+	function stopColor() {
+		clearInterval(myVar);
+		$('#loading').hide();
+		$('#container').show();
+	}
 	$(function(){
 		function animateAbtn(){
 			$('.myAward img').fadeOut(1000);
