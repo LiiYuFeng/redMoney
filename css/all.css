@@ -10,10 +10,13 @@ html{font-size: 0.32rem;}
 	flex-direction: column;
 }
 /* 进度条 */
-#loading{margin-top: 2rem;}
+#loading{
+	position: absolute;
+	top: 2rem;
+}
 #loading img{
 	width: 40%;
-	margin:0.2rem 30%;
+	margin:0.4rem 30%;
 }
 #loading .spanPar{
 	position: relative;
