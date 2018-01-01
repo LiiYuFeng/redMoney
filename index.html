@@ -42,27 +42,29 @@
 <script>	
 	/*进度条*/
 	var bottomWidth=$('span.bottom').width();
-	var myVar = setInterval(function(){spanWidth()},10);
+	var myVar = setInterval(function(){spanWidth()},10000);
 	function spanWidth(){
 		var topWidth=$('span.top').width();
 		topWidth+=1;
 		$('span.top').width(topWidth);
 		console.log(topWidth);
 		if (topWidth>=bottomWidth) {
-			stopColor();
+			stopLoading();
 		}
 	}
-	function stopColor() {
+	function stopLoading() {
 		clearInterval(myVar);
 		$('#loading').hide();
 		$('#container').show();
 	}
+
+    //让指定的DIV始终显示在屏幕正中间   
+    function setDivCenter(){   
+        var top = ($(window).height() - $('#loading').height())/2;       
+        $('#loading').css( { 'margin-top' : top} );  
+    }  
+    setDivCenter();
 	$(function(){
-		function animateAbtn(){
-			$('.myAward img').fadeOut(1000);
-			$('.myAward img').fadeIn(1000);
-		};
-		setInterval(animateAbtn,2000);
 		$('.myAward').click(function(){
 			window.location.href="myAward.html";
 		})
