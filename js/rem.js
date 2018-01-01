@@ -26,7 +26,7 @@ var wow = new WOW({
 wow.init();
 /*进度条*/
     var bottomWidth=$('span.bottom').width();
-    var myVar = setInterval(function(){spanWidth()},10000);
+    var myVar = setInterval(function(){spanWidth()},15);
     function spanWidth(){
         var topWidth=$('span.top').width();
         topWidth+=1;
