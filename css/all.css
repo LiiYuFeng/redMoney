@@ -10,10 +10,13 @@ html{font-size: 0.32rem;}
 	flex-direction: column;
 }
 /* 进度条 */
+#loading{
+	box-sizing: border-box;	
+}
 
 #loading img{
 	width: 40%;
-	margin:1rem 30% 0.4rem 30%;
+	margin:0 30%;
 }
 #loading .spanPar{
 	position: relative;
@@ -21,7 +24,7 @@ html{font-size: 0.32rem;}
 #loading span.bottom{
 	display: block;
 	width:100%;
-	height: 0.2rem;
+	height: .2rem;
 	background-color: #060552;
 	border-radius: 10px;
 }
