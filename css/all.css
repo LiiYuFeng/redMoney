@@ -10,7 +10,7 @@ html{font-size: 0.32rem;}
 	flex-direction: column;
 }
 /* 进度条 */
-#loading{text-align: center;margin-top: 2rem;}
+#loading{margin-top: 2rem;}
 #loading img{
 	width: 40%;
 	margin:0.2rem 30%;
