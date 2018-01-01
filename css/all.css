@@ -10,11 +10,7 @@ html{font-size: 0.32rem;}
 	flex-direction: column;
 }
 /* 进度条 */
-#loading{
-	position: absolute;
-	top: 2rem;
-	width: 88.4%;
-}
+
 #loading img{
 	width: 40%;
 	margin:0.4rem 30%;
