@@ -24,28 +24,5 @@ var wow = new WOW({
             live: true
         });
 wow.init();
-/*进度条*/
-    var bottomWidth=$('span.bottom').width();
-    var myVar = setInterval(function(){spanWidth()},15);
-    function spanWidth(){
-        var topWidth=$('span.top').width();
-        topWidth+=1;
-        $('span.top').width(topWidth);
-        console.log(topWidth);
-        if (topWidth>=bottomWidth) {
-            stopLoading();
-        }
-    }
-    function stopLoading() {
-        clearInterval(myVar);
-        $('#loading').hide();
-        $('#container').show();
-    }
-/*进度居中 */
-    function setDivCenter(){   
-        var top = ($(window).height() - $('#loading').height())/2;       
-        $('#loading').css( { 'margin-top' : top} );  
-    }  
-    setDivCenter();
 
 
