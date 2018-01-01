@@ -46,7 +46,7 @@
 			$('.awardFont').fadeIn(1000);
 		};
 		setInterval(animateAbtn,2000);
-		$('#footButton img').click(function(){
+		$('#footButton img').on('touchstart',function(){
 			window.location.href='index.html'
 		})
 	})

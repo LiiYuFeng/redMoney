@@ -35,10 +35,10 @@
 			$('.myAward img').fadeIn(1000);
 		};
 		setInterval(animateAbtn,2000);
-		$('.myAward').click(function(){
+		$('.myAward').on('touchstart',function(){
 			window.location.href="myAward.html";
 		})
-		$('#footButton').click(function(){
+		$('#footButton img').on('touchstart',function(){
 			window.location.href="getAward.html";
 		})
 	})

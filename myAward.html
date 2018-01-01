@@ -54,7 +54,6 @@
 <script type="text/javascript" src="js/wow.min.js"></script>
 <script type="text/javascript" src="js/rem.js"></script>
 <script>
-	/*奖品*/
 	$('.toGet').on('touchstart',function(){
 		window.location.href="deaAward.html";
 	})
@@ -64,10 +63,8 @@
 	$(".haveThing").animate({
 	      height:'7rem',
 	    },2500);
-	$('#footButton img').click(function(){
-				/*$('.toggle').hide(500);
-				$('.toggle1').show(500);*/
-		window.location.href="index.html";
+	$('#footButton img').on('touchstart',function(){
+			window.location.href='index.html'
 	})
 	function imgFade(){
 		$('.imgFade').fadeOut(1500);
