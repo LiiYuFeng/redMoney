@@ -99,18 +99,16 @@ html{font-size: 0.32rem;}
 	margin:0.3rem 3.8% 0 3.8%;
 	height: 2.6rem;
 	color: white;
+	box-sizing: border-box;
 }
-.awardList .items{
-	padding: 0 3.8%;
-}
-.awardList .items:nth-child(1){flex-basis:45%;}
-.awardList .items:nth-child(2){flex-basis:55%;}
+.awardList .items:nth-child(1){flex-basis:40%;padding:0 3%}
+.awardList .items:nth-child(2){flex-basis:60%;padding-right: 2.5%;}
 .awardList .listLeft img{width: 100%;}
 .awardList .listRight h4{font-size: 0.37rem;font-weight: bold}
 .awardList .listRight{text-align: right;}
 .awardList .listRight .status button{
 	font-size: 0.28rem;
-	width: 80%;
+	width: 70%;
 	border: none;
 	outline: none;
 	color: white;
