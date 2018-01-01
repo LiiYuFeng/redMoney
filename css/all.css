@@ -12,7 +12,8 @@ html{font-size: 0.32rem;}
 /* 进度条 */
 #loading{text-align: center;margin-top: 2rem;}
 #loading img{
-	width: 30%;
+	width: 40%;
+	margin:0.2rem 30%;
 }
 #loading .spanPar{
 	position: relative;
