@@ -54,23 +54,25 @@
 <script type="text/javascript" src="js/wow.min.js"></script>
 <script type="text/javascript" src="js/rem.js"></script>
 <script>
-	$('.toGet').on('touchstart',function(){
+	$(function(){
+		$('.toGet').on('touchstart',function(){
 		window.location.href="deaAward.html";
+		})
+		$(".noPadding").animate({
+		      height:'5rem',
+		    },2500);
+		$(".haveThing").animate({
+		      height:'7rem',
+		    },2500);
+		$('#footButton').click(function(){
+				window.location.href="index.html";
+			})
+		function imgFade(){
+			$('.imgFade').fadeOut(1500);
+			$('.imgFade').fadeIn(1500);
+		}
+		setInterval(imgFade,3000);
 	})
-	$(".noPadding").animate({
-	      height:'5rem',
-	    },2500);
-	$(".haveThing").animate({
-	      height:'7rem',
-	    },2500);
-	$('#footButton').on('touchstart',function(){
-			window.location.href='index.html'
-	})
-	function imgFade(){
-		$('.imgFade').fadeOut(1500);
-		$('.imgFade').fadeIn(1500);
-	}
-	setInterval(imgFade,3000);
 </script>
 </body>
 </html>
