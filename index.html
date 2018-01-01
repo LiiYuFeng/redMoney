@@ -10,25 +10,53 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 </head>
+<style type="text/css">
+	.loading{ 
+ background:#FF6100; 
+ height:5px; 
+ position:fixed; 
+ top:0; 
+ z-index:99999
+}
+
+</style>
 <body class="indexBody">
+	<div class="loading"></div>
 	<div id="container">
 		<div id="topLogo">
 			<div class="logoImg"><img src="image/logo.png"></div>
 			<div class="myAward"><img src="image/myAward.png"></div>
 		</div>
+		<script type="text/javascript"> 
+		 $('.loading').animate({'width':'33%'},50); 
+		 //第一个进度节点 
+		</script>
 		<div id="topicFont"><img src="image/topicFont.png"></div>
 		<div id="centerInput">
 			<textarea placeholder="请输入您对诗尼曼15周年的祝福或者您的 新年愿望..."></textarea>
 		</div>
+		<script type="text/javascript"> 
+		 $('.loading').animate({'width':'75%'},50); 
+		 //第一个进度节点 
+		</script>
+
 		<div id="footButton">
 			<img src="image/anniu.png" class="wow pulse infinite">
 		</div>
+		<script type="text/javascript"> 
+		 $('.loading').animate({'width':'100%'},50); 
+		 //第一个进度节点 
+		</script>
 	</div>
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/wow.min.js"></script>
 <script type="text/javascript" src="js/rem.js"></script>
 <script>	
+$(document).ready(function(){ 
+ $('.loading').fadeOut();  
+});
+
 	$(function(){
 		function animateAbtn(){
 			$('.myAward img').fadeOut(1000);
