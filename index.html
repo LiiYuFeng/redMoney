@@ -37,6 +37,7 @@
 			<div class="logoImg"><img src="image/logo.png"></div>
 			<div class="myAward"><img src="image/myAward.png"></div>
 		</div>
+		<div id="topicFont"><img src="image/topicFont.png"></div>
 		<div id="centerInput">
 			<textarea placeholder="请输入您对诗尼曼15周年的祝福或者您的 新年愿望..."></textarea>
 		</div>
@@ -46,7 +47,7 @@
 	</div>
 </div>
 <!-- 抽奖操作页 -->
-<div id="page2" style="display: none">
+<div id="page2" style="display: none;position: fixed;top: 0;left: 0;width:100%;height:100%;background: url(image/award_bg.jpg) no-repeat;background-size: 100%;padding:0 9.3%;box-sizing: border-box;">
 	<div class="container animated pulse">
 		<div id="awardOpen">
 			<div class="openBg"><img src="image/background.png"></div>
@@ -180,7 +181,6 @@
     setDivCenter();
     /*点击跳转*/
 	$('.myAward').click(function(){
-		$('body').addClass('listBody');
 		$('#page5').show();
 		$('#page5').siblings().hide();
 		var openMp = document.getElementById('open');
@@ -193,7 +193,6 @@
 		},1500);
 	})
 	$('#page1 .footButton').click(function(){
-		$('body').addClass('getBody');
 		$('#page2').show();
 		$('#page2').siblings().hide();
 	})
@@ -204,30 +203,28 @@
 	})
 /*page3*/
 	$('#page3 .footButton').click(function(){
-		$('body').addClass('indexBody');
-		$('body').removeClass('getBody');
 		$('#page1').show();
 		$('#page1').siblings().hide();
 	})
 /*page4*/
 	$('#page4 .footButton').click(function(){
-		$('body').addClass('indexBody');
-		$('body').removeClass('getBody');
 		$('#page5').show();
 		$('#page5').siblings().hide();
 	})
 /*page5*/
 	$('.toGet').click(function(){
-		$('body').addClass('getBody');
 		$('#page4').show();
 		$('#page4').siblings().hide();
 	})
 	$('#page5 .footButton').click(function(){
-		$('body').addClass('indexBody');
-		$('body').removeClass('getBody');
 		$('#page1').show();
 		$('#page1').siblings().hide();
 	})
+	/*function ll(){
+		$('.imgimg').fadeOut(500);
+		$('.imgimg').fadeIn(500);
+	}
+	setInterval(ll,1000)*/
 </script>
 </body>
 </html>
