@@ -1,5 +1,5 @@
 html{font-size: 0.32rem;}
-#container{
+.container{
 	display: -webkit-flex;
 	display: flex;
 	-webkit-justify-content: center;
@@ -8,6 +8,17 @@ html{font-size: 0.32rem;}
 	align-items: center;
 	-webkit-flex-direction: column;
 	flex-direction: column;
+}
+/* 音乐 */
+#mp3Btn{
+	position: relative;
+}
+.rotateClass{
+	width: 0.5rem;
+	height: 0.5rem; 
+	position: absolute; 
+	top: 0.1rem;
+	right: 5.8%;
 }
 /* 进度条 */
 #loading {box-sizing: border-box;}
@@ -37,7 +48,7 @@ html{font-size: 0.32rem;}
 }
 /* 首页 */
 .indexBody{
-	background:url('../image/index_bg.jpg') no-repeat;
+	background:url('../image/back2.jpg') no-repeat;
 	background-size: 100%;
 	margin:0 5.8%;
 }
@@ -46,7 +57,7 @@ html{font-size: 0.32rem;}
 	display: flex;
 	-webkit-align-items: center;
 	align-items: center;
-	margin-top: 0.4rem;
+	margin-top: 0.8rem;
 }
 #topLogo .logoImg{
 	width: 48%;
@@ -54,15 +65,14 @@ html{font-size: 0.32rem;}
 #topLogo .myAward{
 	width: 52%;
 }
-#topLogo .logoImg img,#topicFont img{width: 100%;}
+#topLogo .logoImg img{width: 100%;}
 #topLogo .myAward img{width: 70%;margin-left:30%;}
-#topicFont{margin-top: 0.55rem;}
 #centerInput{
 	width: 100%;
 	background: url('../image/input.png') no-repeat;
 	background-size: 100% 100%;
 	height: 3.7rem;
-	margin-top: 0.75rem;
+	margin-top: 3.75rem;
 }
 #centerInput textarea{
  	box-sizing: border-box;
@@ -77,11 +87,11 @@ html{font-size: 0.32rem;}
  	overflow-y: scroll;
  	height: 2.4rem;
  }
-#footButton{
+.footButton{
 	width:42%;
 	margin-top: 0.4rem;
 }
-#footButton img{width: 100%;height: 0.65rem;} 
+.footButton img{width: 100%;height: 0.65rem;} 
 /* 我的商品列表页 */
 .listBody{
 	background: url('../image/index_bg.jpg') no-repeat;
@@ -101,10 +111,11 @@ html{font-size: 0.32rem;}
 	width: 100%;
 	overflow-y: scroll;
 }
-.noPadding{height: 2rem;padding:0.8rem 0 1.3rem 0;}
+.noPadding{height: 0.1rem;}
 #mainAward .nothing img{
 	width: 55%;
 	margin-left: 12%;
+	margin-top: 0.8rem;
 }
 #mainAward .tipFont{
 	text-align: center;
@@ -115,7 +126,7 @@ html{font-size: 0.32rem;}
 	line-height: 0.38rem;
 }
 /* 有奖品 */
-.haveThing{height: 2rem;}
+.haveThing{height: 0.1rem;}
 #mainAward .awardList{
 	display: -webkit-flex;
 	display: flex;
@@ -149,11 +160,6 @@ html{font-size: 0.32rem;}
 	margin-top: 0.2rem;
 } 
 /* 领取页 */
-.deaBody{
-	background: url(../image/award_bg.jpg) no-repeat;
-	background-size: 100%;
-	margin:0 10%;
-}
 #awardTip{
 	width: 100%;
 	margin-top: 1.1rem;
