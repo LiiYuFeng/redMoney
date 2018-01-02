@@ -39,8 +39,8 @@
 	.img .fontOpen{
 		position: absolute;
 		bottom: 2.35rem;
-		left: 50%;
-		margin-left: -0.39rem;
+		left: 49.5%;
+		margin-left: -0.42rem;
 		z-index: 16;
 	}
 	.img .fontOpen img{
