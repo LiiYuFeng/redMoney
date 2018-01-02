@@ -12,9 +12,16 @@
 	<link rel="stylesheet"  href="css/red.css">
 </head>
 <body style="background-color:#9e1b4f">
+	<div class="musice">
+		<audio controls="controls" autoplay="autoplay" id="mp3Btn" style="display: none;">
+		  	<source src="js/red.mp3" type="audio/mp3" />
+		</audio>
+		<div class="rotateClass">
+			<img src="image/music.png" style="width: 30px;">
+		</div>
+	</div>
 	<div class="redTop">
 		<h5>欢迎来到红包现场</h5>
-		<audio src="js/red.mp3" autoplay loop>不支持</audio>
 	</div>
 	<div class="select">
 		<div>
@@ -44,6 +51,15 @@
 	var id_card = sessionStorage.getItem('id_card');
     console.log(id_card);
 	$(function(){
+		/*音乐*/
+		$('.rotateClass').click(function(){
+			 if(audio.paused){
+                audio.play(); //播放
+                return;
+            }else{//当前是播放状态
+                audio.pause();
+            }
+		})
 		$.ajax({
 				type: "GET",
 		        url: "red.json",
