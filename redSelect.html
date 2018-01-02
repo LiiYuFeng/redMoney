@@ -52,11 +52,14 @@
     console.log(id_card);
 	$(function(){
 		/*音乐*/
+		var audio = document.getElementById('mp3Btn');
 		$('.rotateClass').click(function(){
 			 if(audio.paused){
+			 	console.log('暂停');
                 audio.play(); //播放
                 return;
             }else{//当前是播放状态
+            	console.log('播放');
                 audio.pause();
             }
 		})
