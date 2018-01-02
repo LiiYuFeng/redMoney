@@ -1,3 +1,14 @@
+/* 音乐 */
+	#mp3Btn{
+		position: relative;
+	}
+	.rotateClass{
+		width: 30px;
+		height: 30px; 
+		position: absolute; 
+		top: 20px;
+		right: 10px;
+	}
 /* 蒙层 */
 	.bodymeng{
 			/* display: none; */
@@ -101,8 +112,8 @@
 		width: 80%;
 		margin: 0.3rem 10%;
 	}
+	.redTop{padding-top: 1rem;}
 	.redTop h5{
-		margin-top: 1rem;
 		font-size: 0.4rem;
 		color: #ecc506;
 		text-align: center;
