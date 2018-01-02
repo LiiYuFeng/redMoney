@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<title>前往领取</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+</head>
+<body class="animated lightSpeedIn deaBody">
+	<div id="container">
+		<div id="awardTip">
+			<div class="openBg"><img src="image/background.png"></div>
+			<div class="name"><p>恭喜您获得U型抱枕</p></div>
+			<div class="imgDea imgThing"><img src="image/theThing.png"></div>
+			<div class="tipGet"><p>请前往舞台左侧领奖区兑奖</p></div>
+		</div>
+		<div id="footButton">
+			<img src="image/toget.png" class="animated pulse infinite">
+		</div>
+	</div>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#footButton').click(function(){
+			window.location.href="index.html";
+		})
+	})
+</script>
+</body>
+</html>
