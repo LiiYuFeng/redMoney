@@ -14,7 +14,7 @@
 <body style="background-color:#9e1b4f">
 	<div class="redTop">
 		<h5>欢迎来到红包现场</h5>
-		<audio src="js/red.mp3">不支持</audio>
+		<audio src="js/red.mp3" autoplay loop>不支持</audio>
 	</div>
 	<div class="select">
 		<div>
@@ -58,16 +58,18 @@
 		            if (quality>0) {
 						$('.btnEvery').css('background','#fe492a');
 					    $('.btnEvery').click(function(){
-					    	$('#red', parent.document).show();
-					    	$('#red', parent.document).siblings().hide();
+					    	window.location.href="red.html"
+					    	/*$('#red', parent.document).show();
+					    	$('#red', parent.document).siblings().hide();*/
 					    })
 					}
 					/*邀请抽奖*/
 					if (invitation>0) {
 						$('.btnPlese').css('background','#fe492a');
 					    $('.btnPlese').click(function(){
-					    	$('#red', parent.document).show();
-					    	$('#red', parent.document).siblings().hide();
+					    	window.location.href="red.html"
+					    	/*$('#red', parent.document).show();
+					    	$('#red', parent.document).siblings().hide();*/
 					    })
 					};
 		        }
