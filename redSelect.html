@@ -7,7 +7,6 @@
 	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="telephone=no" name="format-detection"/>
 	<title>红包领取</title>
-	<bgsound src="js/red.mp3" loop="-1"> 
 	<link rel="stylesheet"  href="css/reset.css">
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet"  href="css/red.css">
@@ -19,14 +18,14 @@
 	<div class="select">
 		<div>
 			<ul class="clearFloat">
-				<li><img src="image/redPack.png" class="wow swing infinite"></li>
+				<li><img src="image/redPack.png" class="animated swing infinite"></li>
 				<li><button class="btnEvery">每日消费红包</button></li>
 				<li><p>今日剩余<span class="numEvery"></span>次抽奖机会</p></li>
 			</ul>
 		</div>
 		<div>
 			<ul class="clearFloat">
-				<li><img src="image/redPack.png" class="wow swing infinite"></li>
+				<li><img src="image/redPack.png" class="animated swing infinite"></li>
 				<li><button class="btnPlese">邀请奖励红包</button></li>
 				<li><p>今日剩余<span class="numPlese"></span>次抽奖机会</p></li>
 			</ul>
@@ -37,8 +36,7 @@
 		<a href="##">点击邀请好友关注获取红包&ensp;&gt;</a>
 	</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script type="text/javascript" src="js/rem.js"></script>
+	<script type="text/javascript" src="js/all.js"></script>
 	<script>
 	/*本地存储用户的身份证*/
 	sessionStorage.setItem('id_card', 320621198008206990);
@@ -77,7 +75,7 @@
 		function color(){
 		        i+=1;
 		        if (i>=3) {i=0};
-		        $('.redLink a').css('color',colorFont[i])
+		        $('.redLink a').css('color',colorFont[i]);
 		        };
 		setInterval(color,1000);
 	})
