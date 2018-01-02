@@ -29,9 +29,9 @@
 			<audio controls="controls" autoplay="autoplay" loop="loop"  id="musicAbtn" style="display: none;">
 			  	<source src="kong.mp3" type="audio/mp3" />
 			</audio>
-			<div class="rotateClass">
+			<!-- <div class="rotateClass">
 				<img src="image/music.png" style="width: 0.5rem;">
-			</div>
+			</div> -->
 		</div>
 		<div id="topLogo">
 			<div class="logoImg"><img src="image/logo.png"></div>
@@ -145,8 +145,8 @@
 <script type="text/javascript" src="js/rem.js"></script>
 <script>
 /*page1*/
-	/*音乐*/
-	var audio = document.getElementById('musicAbtn');
+	/*音乐停止按钮*/
+	/*var audio = document.getElementById('musicAbtn');
 	$('.rotateClass').click(function(){
 		if(audio.paused){
           audio.play();
@@ -154,7 +154,7 @@
         }else{
            audio.pause();
        }
-    })
+    })*/
 	/*进度条*/
     var bottomWidth=$('span.bottom').width();
     var myVar = setInterval(function(){spanWidth()},15);
