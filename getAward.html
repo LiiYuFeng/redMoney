@@ -32,7 +32,8 @@
 		};
 		setInterval(animateAbtn,2000);
 		$('#footButton').click(function(){
-			window.location.href="showAward.html";
+			$('#showAward', parent.document).show();
+			$('#showAward', parent.document).siblings().hide();
 		})
 	})
 </script>
