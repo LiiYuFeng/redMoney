@@ -15,14 +15,6 @@
                 win.addEventListener(resizeEvt, recalc, false);
                 doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
-/*wow动画*/
-var wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: true,
-            live: true
-        });
-wow.init();
+
 
 
