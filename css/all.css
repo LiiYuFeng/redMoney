@@ -57,7 +57,7 @@ html{font-size: 0.32rem;}
 	display: flex;
 	-webkit-align-items: center;
 	align-items: center;
-	margin-top: 0.8rem;
+	margin-top: 0.9rem;
 }
 #topLogo .logoImg{
 	width: 48%;
@@ -72,7 +72,7 @@ html{font-size: 0.32rem;}
 	background: url('../image/input.png') no-repeat;
 	background-size: 100% 100%;
 	height: 3.7rem;
-	margin-top: 3.75rem;
+	margin-top: 3.6rem;
 }
 #centerInput textarea{
  	box-sizing: border-box;
