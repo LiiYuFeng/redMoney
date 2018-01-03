@@ -71,6 +71,10 @@ html{font-size: 0.32rem;}
 	padding:0 9.3%;
 	box-sizing: border-box;
 }
+#page1 .star{
+	background: url(../image/star.png) no-repeat;
+	background-size: 100%;
+}
 /* 首页 */
 /* .indexBody{
 	background:url('../image/index_bg.jpg') no-repeat;
