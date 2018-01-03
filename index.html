@@ -24,7 +24,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="container star" style="display: none;">
+	<div class="container" style="display: none;">
 		<div class="musice">
 			<audio controls="controls" autoplay="autoplay" loop="loop"  id="musicAbtn" style="display: none;">
 			  	<source src="kong.mp3" type="audio/mp3" />
@@ -223,11 +223,18 @@
 		$('#page1').show();
 		$('#page1').siblings().hide();
 	})
-	/*function ll(){
-		$('.imgimg').fadeOut(500);
-		$('.imgimg').fadeIn(500);
+/*星星闪烁*/
+	function miao(){
+		var startTime = new Date().getSeconds();
+		if (startTime%2 ==0) {
+			console.log(0)
+			$("#page1 .container").addClass('star') 
+		}else{
+			console.log(1)
+			$("#page1 .container").removeClass('star')  
+		}
 	}
-	setInterval(ll,1000)*/
+	setInterval(miao,1000)
 </script>
 </body>
 </html>
