@@ -13,7 +13,7 @@
 </head>
 <body>
 <!-- 首页 -->
-<div id="page1" >
+<div id="page1">
 	<!-- 进度条 -->
 	<div id="loading">
 		<ul>
@@ -24,7 +24,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="container" style="display: none;">
+	<div class="container star" style="display: none;">
 		<div class="musice">
 			<audio controls="controls" autoplay="autoplay" loop="loop"  id="musicAbtn" style="display: none;">
 			  	<source src="kong.mp3" type="audio/mp3" />
@@ -175,7 +175,7 @@
     }
 	/*进度居中 */
     function setDivCenter(){   
-        var top = ($(window).height() - $('#loading ul').height())/2; 
+        var top = ($(window).height() - $('#loading ul').height())/2-$('#loading ul').height(); 
         $('#loading').css( { 'padding-top' : top} );  
     }  
     setDivCenter();
@@ -208,11 +208,14 @@
 	})
 /*page4*/
 	$('#page4 .footButton').click(function(){
+		$('.toGet').eq(award_index).text('已领取');
+		$('.toGet').eq(award_index).removeClass('toGet');
 		$('#page5').show();
 		$('#page5').siblings().hide();
 	})
 /*page5*/
 	$('.toGet').click(function(){
+		 award_index=$(this).index();
 		$('#page4').show();
 		$('#page4').siblings().hide();
 	})
