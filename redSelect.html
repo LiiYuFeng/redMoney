@@ -70,11 +70,7 @@
 	       url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,  
 	       dataType: 'json',  
 	       type: 'GET',  
-	       beforeSend: function (xhr) {  
-	           xhr.setRequestHeader("Test", "testheadervalue");  
-	       },  
-	       async: false,  
-	       cache: false,  
+	       beforeSend: function(xhr){xhr.setRequestHeader('X-Test-Header', 'test-value');}, 
 	       //contentType: 'application/x-www-form-urlencoded',  
 	       success: function (sResponse) {  
 	       	console.log(454545)
