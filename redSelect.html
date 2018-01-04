@@ -66,6 +66,9 @@
                 audio.pause();
             }
 		})
+		$.getJSON("http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card, function(json){      
+            alert(1111);     
+        });
 		$.ajax({
 				type: "GET",
 		        url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
