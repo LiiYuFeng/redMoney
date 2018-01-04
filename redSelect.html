@@ -67,11 +67,15 @@
             }
 		})
 		$.ajax({
-				type: "post",
+				type: "GET",
 		        url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
 		        dataType: "json",
-		        headers:{'Content-Type': "application/json"},
-		        success:function(data){
+		        beforeSend: function (xhr) {  
+		           xhr.setRequestHeader("Test", "testheadervalue");  
+		       },  
+		       async: false,  
+		       cache: false,
+		       success:function(data){
 		            console.log("成功"+JSON.stringify(data));
 		            var quality=data.quantity;//消费抽取数量
 		            var invitation=data.invitation;//邀请抽取数量
