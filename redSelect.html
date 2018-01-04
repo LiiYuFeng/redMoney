@@ -12,12 +12,13 @@
 	<link rel="stylesheet"  href="css/red.css">
 </head>
 <body style="background-color:#9e1b4f">
+<div id="cover">
 	<div class="musice">
 		<audio controls="controls" autoplay="autoplay" id="mp3Btn" style="display: none;">
 		  	<source src="js/red.mp3" type="audio/mp3" />
 		</audio>
 		<div class="rotateClass">
-			<img src="image/music.png" style="width: 30px;">
+			<img src="image/music.png" style="width: 0.6rem;">
 		</div>
 	</div>
 	<div class="redTop">
@@ -43,6 +44,7 @@
 	<div class="redLink">
 		<a href="##">点击邀请好友关注获取红包&ensp;&gt;</a>
 	</div>
+</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/all.js"></script>
 	<script>
@@ -65,12 +67,12 @@
 		})
 		$.ajax({
 				type: "GET",
-		        url: "red.json",
+		        url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
 		        dataType: "json",
 		        success:function(data){
-		            console.log("成功"+JSON.stringify(data.data));
-		            var quality=data.data[0].quantity;//消费抽取数量
-		            var invitation=data.data[0].invitation;//邀请抽取数量
+		            console.log("成功"+JSON.stringify(data));
+		            var quality=data.quantity;//消费抽取数量
+		            var invitation=data.invitation;//邀请抽取数量
 		            $('.numEvery').text(quality);
 		            $('.numPlese').text(invitation);
 		            /*消费红包*/
