@@ -125,7 +125,5 @@
 		font-size: 0.3rem;
 		color: #f7ac38;
 	}
-	.backIndex{
-		text-align: center;
-		font-size: 0.35rem;
-	}
+	.backIndex{text-align: center;}
+	.backIndex a{font-size: 0.35rem;}
