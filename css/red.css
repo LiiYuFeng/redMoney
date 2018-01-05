@@ -3,11 +3,11 @@
 		position: relative;
 	}
 	.rotateClass{
-		width: 30px;
-		height: 30px; 
+		width: 0.6rem;
+		height: 0.6rem; 
 		position: absolute; 
-		top: 20px;
-		right: 10px;
+		top: 0.4rem;
+		right: 0.2rem;
 	}
 /* 蒙层 */
 	.bodymeng{
@@ -125,4 +125,6 @@
 		font-size: 0.3rem;
 		color: #f7ac38;
 	}
-	
+	.backIndex a{
+		font-size: 0.4rem;
+	}
