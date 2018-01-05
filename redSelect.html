@@ -64,6 +64,11 @@
 		</div>
 		<!-- 邀请抽红包 -->
 		<div class="showCon redMoney" style="display:none">
+			<div class="musicOpen">
+				<audio id="open"  style="display: none;">
+				  	<source src="open.mp3" type="audio/mp3" />
+				</audio>
+			</div>
 			<div class="img">
 				<div class="openPage"><img src="image/redOpen.png" ></div>
 				<div class="closePage"><img src="image/closeIcon.png" class="animated  fadeIn"></div>
@@ -145,6 +150,8 @@
 		});
 		/*请求红包数据*/
 		$('.linkOpen').click(function() {
+			var openMp = document.getElementById('open');
+			openMp.play();
 			$.ajax({
 					type: "GET",
 		            url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=redeem_red_packet&id_card="+id_card,
