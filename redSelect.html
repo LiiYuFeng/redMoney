@@ -73,7 +73,7 @@
 				<div class="openPage"><img src="image/redOpen.png" ></div>
 				<div class="closePage"><img src="image/closeIcon.png" class="animated  fadeIn"></div>
 				<div class="numMoney">
-					<span class="fontMoney" ></span>
+					<span class="fontMoney" >3.55</span>
 				</div>
 				<div class="getMoney">
 					<a href="##"><span>立即提现&ensp;&gt;</span></a>
@@ -158,7 +158,7 @@
 		            dataType: "json",
 		            success:function(data){
 		            console.log(JSON.stringify(data));
-		             	$('.fontMoney').text(data.amount);
+		             	/*$('.fontMoney').text(data.amount);*/
 		            }
 			});
 				$('.redPack').hide(500);
