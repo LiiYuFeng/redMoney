@@ -79,6 +79,7 @@
 		font-size: 0.25rem;
 		font-family: '宋体 Regular';
 	}
+	
 	/* 红包模块选择 */
 	.clearFloat::after{
 		content: '';
@@ -126,4 +127,4 @@
 		color: #f7ac38;
 	}
 	.backIndex{text-align: center;}
-	.backIndex a{font-size: 0.35rem;}
+	.backIndex a{font-size: 0.3rem;}
