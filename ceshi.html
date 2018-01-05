@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"/><!-- 兼容iphone -->
+	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta content="telephone=no" name="format-detection"/>
+	<meta http-equiv="Access-Control-Allow-Origin" content="">
+	<title>红包领取</title>
+	<link rel="stylesheet"  href="css/reset.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet"  href="css/red.css">
+</head>
+<body>
+	<div class="shsh">
+		
+	</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/all.js"></script>
+	<script>
+	/*本地存储用户的身份证*/
+	sessionStorage.setItem('id_card', 320621198008206990);
+	var id_card = sessionStorage.getItem('id_card');
+    console.log(id_card);
+	$(function(){
+		$.ajax({
+			   type: "GET",
+		       url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card=320621198008206990",
+		       dataType: "json", 
+		       cache:false, 
+		       headers: {  
+			       Accept: "application/json; charset=utf-8"  
+			   }, 
+		       success:function(data){
+		       		console.log(454545)
+		       }
+		})
+	})
+	</script>
+</body>
+</html>
