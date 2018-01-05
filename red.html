@@ -13,6 +13,7 @@
 	<link rel="stylesheet"  href="css/red.css">
 </head>
 <body>
+	<div class="backIndex"><a href="redSelect.html">返回抽奖页</a></div>
 	<!-- 页面蒙层 -->
 	<div class="mengceng">
 		<div class="bodymeng"></div>
@@ -30,8 +31,8 @@
 		<!-- 邀请抽红包 -->
 		<div class="showCon redMoney" style="display:none">
 			<div class="img">
-				<div class="openPage"><img src="image/redOpen.png"></div>
-				<div class="closePage"><img src="image/closeIcon.png" ></div>
+				<div class="openPage"><img src="image/redOpen.png" ></div>
+				<div class="closePage"><img src="image/closeIcon.png" class="animated  fadeIn"></div>
 				<div class="numMoney">
 					<span class="fontMoney" ></span>
 				</div>
@@ -45,39 +46,27 @@
 	<script type="text/javascript" src="js/all.js"></script>
 	<script async>
 		$(function(){
-			var id_card = sessionStorage.getItem('id_card');
-			console.log("另一个页面的"+id_card);
-			$.ajax({
-					 type: "GET",
-		             url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
-		             dataType: "json",
-		             success:function(data){
-		             	console.log("成功"+JSON.stringify(data));
-		             },error:function(error){
-		             	console.log("失败"+JSON.stringify(error))
-		             }
-			})
 			/*关闭红包页面*/
 			$('.closePage').click(function(event){
-					event.stopPropagation();
-				    $('.bodymeng').hide();
-					$('.showCon').hide();
-				});
+				event.stopPropagation();
+				$('.bodymeng').hide();
+				$('.showCon').hide();
+			});
 			/*请求红包数据*/
-			$('.linkOpen').on('touchstart',function(e) {
+			$('.linkOpen').click(function() {
 				$.ajax({
 					 type: "GET",
-		             url: "redSelect.json",
+		             url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=redeem_red_packet&id_card="+id_card,
 		             dataType: "json",
 		             success:function(data){
-		             	console.log(JSON.stringify(data.data1));
-		             	$('.fontMoney').text(data.data1[0].amount);
+		             	console.log(JSON.stringify(data));
+		             	$('.fontMoney').text(data.amount);
 		             }
 				});
 				$('.redPack').hide(500);
 			    $('.redMoney').show(500);
 			});
 		})
-	</script>
+	</script> 
 </body>
 </html>
