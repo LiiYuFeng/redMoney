@@ -70,7 +70,7 @@
 		$.ajax({
 			   type: "GET",
 		       url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
-		       dataType: "JSONP", 
+		       dataType: "json", 
 		       success:function(data){
 		       		console.log('里面的454545');
 		            console.log("成功"+JSON.stringify(data));
