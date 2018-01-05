@@ -13,47 +13,80 @@
 	<link rel="stylesheet"  href="css/red.css">
 </head>
 <body style="background-color:#9e1b4f">
-<div id="cover">
-	<div class="musice">
-		<audio controls="controls" autoplay="autoplay" loop="loop" id="mp3Btn" style="display: none;">
-		  	<source src="js/red.mp3" type="audio/mp3" />
-		</audio>
-		<div class="rotateClass">
-			<img src="image/music.png" style="width: 0.6rem;">
+	<div id="cover">
+		<div class="musice">
+			<audio controls="controls" autoplay="autoplay" loop="loop" id="mp3Btn" style="display: none;">
+			  	<source src="js/red.mp3" type="audio/mp3" />
+			</audio>
+			<div class="rotateClass">
+				<img src="image/music.png" style="width: 0.6rem;">
+			</div>
+		</div>
+		<div class="redTop">
+			<h5>欢迎来到红包现场</h5>
+		</div>
+		<div class="select">
+			<div>
+				<ul class="clearFloat">
+					<li><img src="image/redPack.png" class="animated swing infinite"></li>
+					<li><button class="btnEvery">每日消费红包</button></li>
+					<li><p>今日剩余<span class="numEvery"></span>次抽奖机会</p></li>
+				</ul>
+			</div>
+			<div>
+				<ul class="clearFloat">
+					<li><img src="image/redPack.png" class="animated swing infinite"></li>
+					<li><button class="btnPlese">邀请奖励红包</button></li>
+					<li><p>今日剩余<span class="numPlese"></span>次抽奖机会</p></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 邀请链接 -->
+		<div class="redLink">
+			<a href="##">点击邀请好友关注获取红包&ensp;&gt;</a>
 		</div>
 	</div>
-	<div class="redTop">
-		<h5>欢迎来到红包现场</h5>
-	</div>
-	<div class="select">
-		<div>
-			<ul class="clearFloat">
-				<li><img src="image/redPack.png" class="animated swing infinite"></li>
-				<li><button class="btnEvery">每日消费红包</button></li>
-				<li><p>今日剩余<span class="numEvery"></span>次抽奖机会</p></li>
-			</ul>
+	<!-- 奖品 -->
+	<!-- 页面蒙层 -->
+	<div id="mengceng" style="none">
+		<div class="bodymeng"></div>
+			<!-- 积分抽红包 -->
+		<div class="showCon redPack animated rubberBand">
+			<div class="img">
+				<div class="closePage"><img src="image/closeIcon.png" ></div>
+				<div class="imgRed linkOpen"><img src="image/redNoopen.png"></div>
+				<div class="fontOpen linkOpen"><img src="image/fontOpen.png" class="animated  pulse infinite"></div>
+				<div class="getMoney">
+					<a href="##">点击邀好友获抽奖机会&ensp;&gt;</a>
+				</div>
+			</div>
 		</div>
-		<div>
-			<ul class="clearFloat">
-				<li><img src="image/redPack.png" class="animated swing infinite"></li>
-				<li><button class="btnPlese">邀请奖励红包</button></li>
-				<li><p>今日剩余<span class="numPlese"></span>次抽奖机会</p></li>
-			</ul>
+		<!-- 邀请抽红包 -->
+		<div class="showCon redMoney" style="display:none">
+			<div class="img">
+				<div class="openPage"><img src="image/redOpen.png" ></div>
+				<div class="closePage"><img src="image/closeIcon.png" class="animated  fadeIn"></div>
+				<div class="numMoney">
+					<span class="fontMoney" ></span>
+				</div>
+				<div class="getMoney">
+					<a href="##"><span>立即提现&ensp;&gt;</span></a>
+				</div>
+			</div>
 		</div>
 	</div>
-	<!-- 邀请链接 -->
-	<div class="redLink">
-		<a href="##">点击邀请好友关注获取红包&ensp;&gt;</a>
-	</div>
-</div>
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/all.js"></script>
-	<script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+<script>
 	/*本地存储用户的身份证*/
 	sessionStorage.setItem('id_card', 320621198008206990);
 	var id_card = sessionStorage.getItem('id_card');
     console.log(id_card);
 	$(function(){
+		$('.redLink a').click(function(){
+			$('#cover').hide();
+			$('#mengceng').show();
+		})
 		/*音乐*/
 		var audio = document.getElementById('mp3Btn');
 		$('.rotateClass').click(function(){
@@ -102,7 +135,27 @@
 		        	$('.redLink a').css('color',colorFont[i]);
 		        };
 		setInterval(color,1000);
+		/*关闭红包页面*/
+		$('.closePage').click(function(event){
+			event.stopPropagation();
+			$('.bodymeng').hide();
+			$('.showCon').hide();
+		});
+		/*请求红包数据*/
+		$('.linkOpen').click(function() {
+			$.ajax({
+					type: "GET",
+		            url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=redeem_red_packet&id_card="+id_card,
+		            dataType: "json",
+		            success:function(data){
+		            console.log(JSON.stringify(data));
+		             	$('.fontMoney').text(data.amount);
+		            }
+			});
+				$('.redPack').hide(500);
+			    $('.redMoney').show(500);
+		});
 	})
-	</script>
+</script>
 </body>
 </html>
