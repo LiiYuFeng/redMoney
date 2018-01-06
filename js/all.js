@@ -41,6 +41,9 @@ $.ajax({
        type: "GET",
        url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
        dataType: "json", 
+       beforeSend: function (xhr) {  
+           xhr.setRequestHeader("Test", "testheadervalue");  
+       }, 
        success:function(data){
             console.log("成功"+JSON.stringify(data));
             var quality=data.quantity;//消费抽取数量
@@ -90,6 +93,9 @@ $('.linkOpen').click(function() {
             type: "GET",
             url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=redeem_red_packet&id_card="+id_card,
             dataType: "json",
+            beforeSend: function (xhr) {  
+               xhr.setRequestHeader("Test", "testheadervalue");  
+           }, 
             success:function(data){
             console.log(JSON.stringify(data));
             $('.fontMoney').text(data.amount);
