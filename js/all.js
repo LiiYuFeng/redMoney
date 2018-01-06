@@ -41,9 +41,9 @@ $.ajax({
        type: "GET",
        url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
        dataType: "json", 
-       beforeSend: function (xhr) {  
-           xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");  
-       }, 
+       headers: {
+            Accept: "application/json; charset=utf-8"
+        }, 
        success:function(data){
             console.log("成功"+JSON.stringify(data));
             var quality=data.quantity;//消费抽取数量
