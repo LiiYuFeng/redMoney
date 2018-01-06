@@ -88,7 +88,7 @@ $('.linkOpen').click(function() {
             dataType: "json",
             success:function(data){
             console.log(JSON.stringify(data));
-                /*$('.fontMoney').text(data.amount);*/
+            $('.fontMoney').text(data.amount);
             }
     });
         $('.redPack').hide(500);
