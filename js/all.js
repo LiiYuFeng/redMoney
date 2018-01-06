@@ -16,7 +16,7 @@
             doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
 /*本地存储用户的身份证*/
-sessionStorage.setItem('id_card', 320621198008206990);
+sessionStorage.setItem('id_card',320621198008206990);
 var id_card = sessionStorage.getItem('id_card');
 console.log(id_card);
 /*页面脚本*/
@@ -41,9 +41,6 @@ $.ajax({
        type: "GET",
        url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
        dataType: "json", 
-       beforeSend: function (xhr) {  
-           xhr.setRequestHeader("Test", "testheadervalue");  
-       }, 
        success:function(data){
             console.log("成功"+JSON.stringify(data));
             var quality=data.quantity;//消费抽取数量
@@ -93,9 +90,6 @@ $('.linkOpen').click(function() {
             type: "GET",
             url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=redeem_red_packet&id_card="+id_card,
             dataType: "json",
-            beforeSend: function (xhr) {  
-               xhr.setRequestHeader("Test", "testheadervalue");  
-           }, 
             success:function(data){
             console.log(JSON.stringify(data));
             $('.fontMoney').text(data.amount);
