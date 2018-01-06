@@ -68,6 +68,9 @@ $.ajax({
                     $('#mengceng').show();
                 })
             };
+        },
+       error:function(error){
+            console.log(error);
         }
 })
 /*底部字体颜色*/
