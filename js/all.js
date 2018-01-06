@@ -51,14 +51,18 @@ $.ajax({
             if (quality>0) {
                 $('.btnEvery').css('background','#fe492a');
                 $('.btnEvery').click(function(){
-                    window.location.href="red.html"
+                    $('body').css('background','white');
+                    $('#cover').hide();
+                    $('#mengceng').show();
                 })
             }
             /*邀请抽奖*/
             if (invitation>0) {
                 $('.btnPlese').css('background','#fe492a');
                 $('.btnPlese').click(function(){
-                    window.location.href="red.html"
+                    $('body').css('background','white');
+                    $('#cover').hide();
+                    $('#mengceng').show();
                 })
             };
         }
