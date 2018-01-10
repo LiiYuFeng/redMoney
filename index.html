@@ -2,237 +2,147 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	<meta content="yes" name="apple-mobile-web-app-capable"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable"/><!-- 兼容iphone -->
 	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
 	<meta content="telephone=no" name="format-detection"/>
-	<title>年会</title>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<meta http-equiv="access-control-allow-origin" content="*">
+	<title>红包领取</title>
+	<link href='http://cdn.webfont.youziku.com/webfonts/nomal/112924/46050/5a5477cbf629d90d702cfc5b.css' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet"  href="css/reset.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet"  href="css/red.css">
 </head>
 <body>
-<!-- 首页 -->
-<div id="page1">
-	<!-- 进度条 -->
-	<div id="loading">
-		<ul>
-			<li><img src="image/loading.png"></li>
-			<li class="spanPar">
-				<span class="bottom"></span>
-				<span class="top"></span>
-			</li>
-		</ul>
-	</div>
-	<div class="container" style="display: none;">
-		<div class="musice">
-			<audio controls="controls" autoplay="autoplay" loop="loop"  id="musicAbtn" style="display: none;">
-			  	<source src="kong.mp3" type="audio/mp3" />
-			</audio>
-			<!-- <div class="rotateClass">
-				<img src="image/music.png" style="width: 0.5rem;">
-			</div> -->
-		</div>
-		<div id="topLogo">
-			<div class="logoImg"><img src="image/logo.png"></div>
-			<div class="myAward"><img src="image/myAward.png"></div>
-		</div>
-		<div id="topicFont"><img src="image/topicFont.png"></div>
-		<div id="centerInput">
-			<textarea placeholder="请输入您对诗尼曼15周年的祝福或者您的 新年愿望..."></textarea>
-		</div>
-		<div class="footButton">
-			<img src="image/anniu.png" class="animated pulse infinite">
-		</div>
-	</div>
-</div>
-<!-- 抽奖操作页 -->
-<div id="page2"  style="display: none;">
-	<div class="container animated pulse">
-		<div id="awardOpen">
-			<div class="openBg"><img src="image/background.png"></div>
-			<div class="name"><p>恭喜您获得一个红包</p></div>
-			<div class="imgDea"><img src="image/redAnswer.png"></div>
-		</div>
-		<div class="footButton">
-			<img src="image/openRed.png" class="animated pulse infinite">
-		</div>
-	</div>
-</div>
-<!-- 抽奖结果页 -->
-<div id="page3" style="display: none;">
-	<div class="container">
-		<!-- 实物奖品 -->
-		<div id="awardOpen" style="display: none">
-			<div class="openBg"><img src="image/background.png"></div>
-			<div class="name"><p>恭喜您获得U型抱枕</p></div>
-			<div class="imgDea imgThing"><img src="image/theThing.png" class="animated bounceIn"></div>
-			<div class="tipAction"><p>温馨提示：还可以继续发祝福语抢红包与奖品</p></div>
-			<div class="tipGet"><p>*请前往舞台左侧领奖区兑奖</p></div>
-		</div>
-		<!-- 红包或者没中奖 -->
-		<div id="awardOpen"  style="display: none">
-			<div class="openBg"><img src="image/background.png"></div>
-			<div class="name"><p>差一点就拿到红包啦&sim;</p></div>
-			<div class="imgDea"><img src="image/think.png"  class="animated bounceIn"></div>
-		</div>
-		<div id="awardOpen">
-			<div class="openBg"><img src="image/background.png"></div>
-			<div class="name"><p>恭喜您获得<span>20</span>元红包</p></div>
-			<div class="imgDea"><img src="image/moneyOne.png" class="animated bounceIn"></div>
-		</div>
-		<div class="footButton">
-			<img src="image/continueAbtn.png" class="animated pulse infinite">
-		</div>
-	</div>
-</div>
-<!-- 奖品详情页 -->
-<div id="page4" style="display: none;">
-	<div class="container">
-		<div id="awardTip">
-			<div class="openBg"><img src="image/background.png"></div>
-			<div class="name"><p>恭喜您获得U型抱枕</p></div>
-			<div class="imgDea imgThing"><img src="image/theThing.png"></div>
-			<div class="tipGet"><p>请前往舞台左侧领奖区兑奖</p></div>
-		</div>
-		<div class="footButton">
-			<img src="image/toget.png" class="animated pulse infinite">
-		</div>
-	</div>
-</div>
-<!-- 我的奖品 -->
-<div id="page5" style="display: none;padding: 2.7%">
-	<div class="container">
-		<div class="musicOpen">
-			<audio id="open"  style="display: none;">
-			  	<source src="open.mp3" type="audio/mp3" />
-			</audio>
-		</div>
-		<div id="title">
-			<div class="items"><img src="image/title.png" ></div>
-		</div>
-		<!-- 没有奖品时 -->
-		<div id="mainAward" class="noPadding" style="display: none;">
-			<div class="nothing"><img src="image/nothing.png"></div>
-			<div class="tipFont">
-				<p>您还没抢到奖品哦</p>
-				<p>赶紧行动吧!</p>
-			</div>
-		</div>
-		<!-- 有奖品时 -->
-		<div id="mainAward" class="haveThing">
-			<div class="awardList">
-				<div class="items listLeft"><img src="image/redWatch.png"></div>
-				<div class="items listRight">
-					<h4>20元红包</h4>
-					<p class="status"><button>已领取</button></p>
+	<div id="flexPar">
+		<!-- 首页模块 -->
+		<div id="cover">
+			<div class="musice">
+				<audio controls="controls" autoplay="autoplay" loop="loop" id="mp3Btn" style="display: none;">
+				  	<source src="js/redPack.mp3" type="audio/mp3" />
+				</audio>
+				<div class="rotateClass">
+					<img src="image/music.png" style="width: 0.6rem;">
 				</div>
 			</div>
-			<div class="awardList">
-				<div class="items listLeft"><img src="image/awardTwo.png"></div>
-				<div class="items listRight">
-					<h4>U型抱枕</h4>
-					<p>请前往舞台左侧领奖区兑奖</p>
-					<p class="status"><button class="toGet">立即领取</button></p>
+			<div class="redTop">
+				<h5>欢迎来到红包现场</h5>
+			</div>
+			<div class="select">
+				<div>
+					<ul class="clearFloat">
+						<li><img src="image/redPack.png" class="animated swing infinite"></li>
+						<li><button class="btnEvery">每日消费红包</button></li>
+						<li><p>今日剩余<span class="numEvery"></span>次抽奖机会</p></li>
+					</ul>
+				</div>
+				<div>
+					<ul class="clearFloat">
+						<li><img src="image/redPack.png" class="animated swing infinite"></li>
+						<li><button class="btnPlese">邀请奖励红包</button></li>
+						<li><p>今日剩余<span class="numPlese"></span>次抽奖机会</p></li>
+					</ul>
 				</div>
 			</div>
+			<!-- 邀请链接 -->
+			<div class="redLink">
+				<a href="##">点击邀请好友关注获取红包&ensp;&gt;</a>
+			</div>
 		</div>
-		<div class="footButton">
-			<img src="image/backAbtn.png" class="animated pulse infinite">
+		<!-- 奖品 -->
+		<!-- 点击抽奖模块 -->
+		<div id="abtnCon" class="animated bounceIn" style="display:none">
+			<div class="items">
+				<ul>
+					<li><button class="oneOpen animated  pulse infinite">一连抽</button></li>
+					<li><button class="tenOpen animated  pulse infinite">十连抽</button></li>
+				</ul>
+			</div>
+			<div class="items middle">
+				<ul>
+					<li class="Tit"><button>抽奖类型</button></li>
+					<!-- <li><img src="image/loginRed.png" class="animated pulse infinite"></li> -->
+				</ul>
+			</div>
+			<div class="items">
+				<ul>
+					<li><button class="hundredOpen animated  pulse infinite">百连抽</button></li>
+					<li><button class="allOpen animated  pulse infinite">全部抽</button></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 单抽页面模块 -->
+		<div id="mengceng" style="display:none">
+			<div class="bodymeng"></div>
+				<!-- 积分抽红包 -->
+			<div class="showCon redPack animated rubberBand">
+				<div class="img">
+					<div class="closePage"><img src="image/closeIcon.png" ></div>
+					<div class="imgRed linkOpen"><img src="image/redNoopen.png"></div>
+					<div class="fontOpen linkOpen"><img src="image/fontOpen.png" class="animated  pulse infinite"></div>
+					<div class="getMoney">
+						<a href="##">点击邀好友获抽奖机会&ensp;&gt;</a>
+					</div>
+				</div>
+			</div>
+			<!-- 邀请抽红包 -->
+			<div class="showCon redMoney" style="display:none">
+				<div class="musicOpen">
+					<audio id="open"  style="display: none;">
+					  	<source src="js/open.mp3" type="audio/mp3" />
+					</audio>
+				</div>
+				<div class="img">
+					<div class="openPage"><img src="image/redOpen.png" ></div>
+					<div class="closePage"><img src="image/closeIcon.png" class="animated  fadeIn"></div>
+					<div class="numMoney">
+						<span class="fontMoney" >3.55</span>
+					</div>
+					<div class="getMoney">
+						<a href="##"><span>立即提现&ensp;&gt;</span></a>
+					</div>
+				</div>
+				<div class="backAbtn"><button>返回抽奖页</button></div>
+			</div>
+		</div>
+		<!-- 连抽结果模块 -->
+		<div id="listModule" class="animated bounceIn"  style="display:none" >
+			<div class="topBack"><img src="image/watch.png"></div>
+			<div class="deaTitle cssf7f1d39561b91c">
+					<p>十连抽成功共获得<span class="animated bounceIn infinite" style="font-size:0.45rem">88</span>元</p>
+			</div>
+			<div class="redDea">
+				<div class="tipAbtn">抽取详情</div>
+				<ul>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>32</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+					<li><span>2017-06-15 06:05:15</span>&ensp;恭喜您获得红包<span>33</span>元</li>
+				</ul>
+				<div class="loadMore"></div>
+			</div>
+			<!-- 按钮 -->
+			<div class="abtnoPen">
+				<button class="againAbtn">再来十次</button>
+				<button class="toBack">返回首页</button>
+			</div>
 		</div>
 	</div>
-</div>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/rem.js"></script>
-<script>
-/*page1*/
-	/*音乐停止按钮*/
-	/*var audio = document.getElementById('musicAbtn');
-	$('.rotateClass').click(function(){
-		if(audio.paused){
-          audio.play();
-          return;
-        }else{
-           audio.pause();
-       }
-    })*/
-	/*进度条*/
-    var bottomWidth=$('span.bottom').width();
-    var myVar = setInterval(function(){spanWidth()},15);
-    function spanWidth(){
-        var topWidth=$('span.top').width();
-        topWidth+=1;
-        $('span.top').width(topWidth);
-        console.log(topWidth);
-        if (topWidth>=bottomWidth) {
-            stopLoading();
-        }
-    }
-    function stopLoading() {
-        clearInterval(myVar);
-        $('#loading').hide();
-        $('#page1 .container').show();
-    }
-	/*进度居中 */
-    function setDivCenter(){   
-        var top = ($(window).height() - $('#loading ul').height())/2-$('#loading ul').height(); 
-        $('#loading').css( { 'padding-top' : top} );  
-    }  
-    setDivCenter();
-    /*点击跳转*/
-	$('.myAward').click(function(){
-		$('#page5').show();
-		$('#page5').siblings().hide();
-		var openMp = document.getElementById('open');
-		openMp.play();
-		$(".noPadding").animate({
-			height:'7rem',
-		    },1500);
-		$(".haveThing").animate({
-			height:'7rem',
-		},1500);
+<script type="text/javascript" src="js/all.js"></script>
+<script type="text/javascript">
+	$('.toBack').click(function(){
+		
 	})
-	$('#page1 .footButton').click(function(){
-		$('#page2').show();
-		$('#page2').siblings().hide();
-	})
-/*page2*/
-	$('#page2 .footButton').click(function(){
-		$('#page3').show();
-		$('#page3').siblings().hide();
-	})
-/*page3*/
-	$('#page3 .footButton').click(function(){
-		$('#page1').show();
-		$('#page1').siblings().hide();
-	})
-/*page4*/
-	$('#page4 .footButton').click(function(){
-		$('.toGet').eq(award_index).text('已领取');
-		$('.toGet').eq(award_index).removeClass('toGet');
-		$('#page5').show();
-		$('#page5').siblings().hide();
-	})
-/*page5*/
-	$('.toGet').click(function(){
-		 award_index=$(this).index();
-		$('#page4').show();
-		$('#page4').siblings().hide();
-	})
-	$('#page5 .footButton').click(function(){
-		$('#page1').show();
-		$('#page1').siblings().hide();
-	})
-/*星星闪烁*/
-	function miao(){
-		var startTime = new Date().getSeconds();
-		if (startTime%2 ==0) {
-			$("#page1 .container").addClass('star') 
-		}else{
-			$("#page1 .container").removeClass('star')  
-		}
-	}
-	setInterval(miao,1000)
 </script>
 </body>
 </html>
