@@ -23,7 +23,19 @@ console.log(id_card);
 $('.redLink a').click(function(){
     $('body').css('background','white');
     $('#cover').hide();
+    $('#abtnCon').show();
+})
+$('.oneOpen').click(function(){
     $('#mengceng').show();
+    $('#mengceng').siblings().hide();
+})
+$('.tenOpen').click(function(){
+    $('#listModule').show(500);
+    $('#listModule').siblings().hide();
+})
+$('.toBack').click(function(){
+    $('#cover').show();
+    $('#cover').siblings().hide();
 })
 /*音乐*/
 var audio = document.getElementById('mp3Btn');
@@ -39,11 +51,8 @@ $('.rotateClass').click(function(){
 })
 $.ajax({
        type: "GET",
-       url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
+       url: "http://www.minstorm.cn/redmoney/api/api.php?url=http://jinlichen.org/shopdataphp/ajax_client.php?action=read_id_account&id_card="+id_card,
        dataType: "json", 
-       headers: {
-            Accept: "application/json; charset=utf-8"
-        }, 
        success:function(data){
             console.log("成功"+JSON.stringify(data));
             var quality=data.quantity;//消费抽取数量
@@ -94,13 +103,13 @@ $('.linkOpen').click(function() {
     openMp.play();
     $.ajax({
             type: "GET",
-            url: "http://jinlichen.org/shopdataphp/ajax_client.php?action=redeem_red_packet&id_card="+id_card,
+            url: "http://www.minstorm.cn/redmoney/api/api.php?url=http://jinlichen.org/shopdataphp/ajax_client.php?action=redeem_red_packet&id_card="+id_card,
             dataType: "json",
             success:function(data){
-            console.log(JSON.stringify(data));
-            $('.fontMoney').text(data.amount);
+                console.log('成功'+JSON.stringify(data));
+                $('.fontMoney').text(data.amount);
             }
     });
-        $('.redPack').hide(500);
-        $('.redMoney').show(1000);
+    $('.redPack').hide(500);
+    $('.redMoney').show(1000);
 })
