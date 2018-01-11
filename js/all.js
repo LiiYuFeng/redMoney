@@ -25,18 +25,23 @@ $('.redLink a').click(function(){
     $('#cover').hide();
     $('#abtnCon').show();
 })
-$('.oneOpen').click(function(){
-    $('#mengceng').show();
-    $('#mengceng').siblings().hide();
-})
-$('.tenOpen').click(function(){
-    $('#listModule').show(500);
-    $('#listModule').siblings().hide();
-})
-$('.toBack').click(function(){
-    $('#cover').show();
-    $('#cover').siblings().hide();
-})
+/*页面切换*/
+function clickAbtn(className,idName,textName){
+    $(className).click(function(){
+        var textCon=$(this).text();
+        $(idName).show(500);
+        $(idName).siblings().hide();
+        $('.spanClass').text(textCon);
+    })
+    
+}
+clickAbtn('.oneOpen','#mengceng');
+clickAbtn('.tenOpen','#listModule',);
+clickAbtn('.hundredOpen','#listModule');
+clickAbtn('.allOpen','#listModule');
+clickAbtn('.toBack','#cover');
+clickAbtn('.backAbtn','#cover');
+clickAbtn('.againAbtn','#abtnCon');
 /*音乐*/
 var audio = document.getElementById('mp3Btn');
 $('.rotateClass').click(function(){
